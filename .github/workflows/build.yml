@@ -18,3 +18,9 @@ jobs:
       - run: npm run typecheck
       - run: npm run test
       - run: npm run package
+      - run: tar cf out.tar out
+      - uses: actions/upload-artifact@v2
+        with:
+          name: out
+          path: out.tar
+          retention-days: 1
